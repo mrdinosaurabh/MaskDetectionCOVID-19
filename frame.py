@@ -84,13 +84,7 @@ def maskDetection(im_pil,img):
 
 fc= cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
-a=0
 while 1:
-
-    a=a+1
-    if(a%10==0):
-      frame=cap.read()
-      a=1
     ret, img = cap.read()
     cv2.imwrite('C:/Users/Saurabh/Desktop/Mask Detector/TestFaces/test.jpg',img)
     im_pill = Image.open('C:/Users/Saurabh/Desktop/Mask Detector/TestFaces/test.jpg')
