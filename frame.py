@@ -71,14 +71,14 @@ model.eval()
 
 def maskDetection(im_pil,img):
     im_pil = tt.ToTensor()(im_pil).unsqueeze_(0)
-    listt = F.softmax(model(im_pil))
+    listt = F.softmax(model(im_pil),dim=1)
 
-    if listt[0][0] > listt[0][1]:
+    if listt[0][0] > 0.8:
         cv2.putText(img, "Masked", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-    else:
+    elif listt[0][1] > 0.8:
         cv2.putText(img, "Unmasked", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
     else:
-       cv2.putText(img, "Please stay still", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+       cv2.putText(img, "Please stay still or fix your lighting.", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
 #Press q to exit
 
@@ -92,11 +92,12 @@ while 1:
       frame=cap.read()
       a=1
     ret, img = cap.read()
+    cv2.imwrite('C:/Users/Saurabh/Desktop/Mask Detector/TestFaces/test.jpg',img)
+    im_pill = Image.open('C:/Users/Saurabh/Desktop/Mask Detector/TestFaces/test.jpg')
     faces = fc.detectMultiScale(img, 1.3, 5)
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
-    im_pill = Image.fromarray(img)
     im_pill = im_pill.resize((256,256))
     maskDetection(im_pill,img)
     cv2.imshow('img', img)
