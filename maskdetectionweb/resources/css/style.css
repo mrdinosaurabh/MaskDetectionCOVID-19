@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+.button{
+    position: relative;
+    font-size: larger;
+    display:inline-block;
+    margin:5px 50%;
+
+
+}
+.btn{
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.5s, border 0.3s, color 0.3s;
+    font-size: 100%;
+}
+h2{
+    color:#fff;
+    position: relative;
+    font-size: larger;
+    display:inline-block;
+    margin:5px 50%;
+}
+#preview{
+    margin:5px 45%;
+}
+#recording{
+    margin:5px 45%;
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0, 0, 0, 0.7)), url(backgroung.png);
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+}
+.btn:hover ,
+.btn:active {
+    background-color: #b5807b;
+    color:#fff;
+}
+
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.5s, border 0.3s, color 0.3s;
+}
+.btn:hover ,
+.btn:active {
+    background-color: #b5807b;
+    color:#fff;
+}
+.prev{
+  margin: 5px 51%;
+}
+#downloadButton{
+    margin: 5px 51%;
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>     
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+</head>
+<title>Webcam Recorder</title>
+<html>
+    <div class="left">
+        <div id="startButton" class="button">
+        <button class="btn strt">
+        <img src="https://img.icons8.com/cute-clipart/64/000000/webcam.png"/>
+        </button>
+        </div>
+        <h2 class="prev">Preview</h2>
+        <video id="preview" width="250" height="250" autoplay muted></video>
+    </div>
+
+    <div class="right">
+        <div id="stopButton" class="button">
+        <button class="btn stop">
+        <img src="https://img.icons8.com/flat_round/64/000000/stop.png"/>
+        </button>
+        </div>
+        <h2>Recording</h2>
+        <video id="recording" width="250" height="250" controls></video>
+        <a id="downloadButton" class="button">
+        <button class="btn down">
+            <img src="https://img.icons8.com/android/24/000000/download.png"/>
+        </button>
+        </a>
+    </div>
+
+    <script src="graphing.js"></script>
+</html>
